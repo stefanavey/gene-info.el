@@ -1,0 +1,11 @@
+# Generated files
+*.elc
+*-pkg.el
+*.tar
+TAGS
+doc/gene-info.texi
+doc/gene-info.info
+
+# Packages
+.cask
+elpa
