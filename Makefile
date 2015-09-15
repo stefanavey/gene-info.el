@@ -31,7 +31,7 @@ install : $(TAR)
 	--eval '(package-install-file "$(PROJ_ROOT)/$(TAR)")'
 
 uninstall :
-	rm -rf $(USER_ELPA_D)/skeletor-*
+	rm -rf $(USER_ELPA_D)/gene-info-*
 
 reinstall : clean uninstall install
 
@@ -48,13 +48,13 @@ $(PKG_DIR) : Cask
 	$(CASK) install
 	touch $(PKG_DIR)
 
-$(TAR) : $(DIST) $(TEXI_MANUAL)
+$(TAR) : $(DIST) # $(TEXI_MANUAL)
 	$(CASK) package
 
 $(DIST) :
 	mkdir $(DIST)
 
-$(TEXI_MANUAL) : $(PKG_DIR) $(ORG_MANUAL)
-	$(CASK) exec $(EMACSBATCH) \
-	-l org -l ox-texinfo \
-	--file=$(ORG_MANUAL) -f org-texinfo-export-to-texinfo
+# $(TEXI_MANUAL) : $(PKG_DIR) $(ORG_MANUAL)
+# 	$(CASK) exec $(EMACSBATCH) \
+# 	-l org -l ox-texinfo \
+# 	--file=$(ORG_MANUAL) -f org-texinfo-export-to-texinfo

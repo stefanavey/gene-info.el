@@ -9,3 +9,6 @@ doc/gene-info.info
 # Packages
 .cask
 elpa
+
+# Anything ending in ~
+*~
